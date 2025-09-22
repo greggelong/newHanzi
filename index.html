@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hanzi Image Converter</title>
+    <style>
+      body {
+        padding-left: 20px;
+        font-family: monospace;
+        background-color: linen;
+        font-size: small;
+      }
+      canvas {
+        display: block;
+        margin-top: 10px;
+      }
+      textarea {
+        color: black;
+        background: linen;
+        font-family: monospace;
+        font-size: x-small;
+        width: 640px;
+        height: 200px;
+      }
+      #output pre {
+        font-family: monospace;
+        font-size: small;
+        line-height: 1.2;
+        background: linen;
+        color: black;
+        padding: 5px;
+        white-space: pre;
+      }
+
+      #output pre,
+      textarea {
+        font-family: "Source Han Mono", "Noto Sans Mono CJK",
+          "Microsoft YaHei Mono", monospace;
+        font-size: 12px;
+        line-height: 1.2;
+        white-space: pre;
+        background: linen;
+        color: black;
+        overflow: auto;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="sketch.js" defer></script>
+  </head>
+  <body>
+    <h2>Hanzi Image Converter</h2>
+
+    <input type="file" id="fileInput" />
+    <label>
+      <input type="checkbox" id="keepAspect" checked />
+      Preserve aspect ratio
+    </label>
+    <br /><br />
+
+    <button id="convertBtn">Convert</button>
+    <button id="saveBtn">Save Canvas</button>
+    <button id="downloadTxtBtn">Download Text</button>
+    <p id="status">Loading…</p>
+
+    <!-- This textarea is used for raw text & downloads -->
+    <textarea id="outputTA"></textarea>
+
+    <!-- This div shows formatted output -->
+    <div id="output"></div>
+  </body>
+</html>

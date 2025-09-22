@@ -1,0 +1,32 @@
+html, body {
+  padding-left: 20px;
+  font-family: monospace;
+  background-color: linen;
+  font-size: small;
+  white-space: pre-line; /* let \n be line breaks */
+}
+
+canvas {
+  display: block;
+}
+
+textarea {
+  color: black; 
+  background: linen;
+  font-family: "Courier New", Courier, monospace; /* strong fallback chain */
+  font-size: 12px; /* fixed size for alignment */
+  line-height: 1.2; /* consistent row spacing */
+  white-space: pre; /* preserve spaces and line breaks exactly */
+  letter-spacing: 0; /* prevent spacing tweaks */
+  overflow: auto; /* scroll if content exceeds size */
+}
+
+#output pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  background: linen;
+  padding: 5px;
+  white-space: pre;
+}
+
