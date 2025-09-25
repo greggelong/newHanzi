@@ -1,4 +1,4 @@
-const hanzi = [
+/* const hanzi = [
   "滴",
   "涌",
   "泉",
@@ -12,6 +12,21 @@ const hanzi = [
   "。",
   "。",
   "。",
+]; */
+
+const hanzi = [
+  "滴",
+  "涌",
+  "泉",
+  "思",
+  "汗",
+  "禾",
+  "文",
+  "下",
+  "土",
+  "一",
+  "一",
+  "一",
 ];
 
 let gridSize = 32;
@@ -25,10 +40,16 @@ let statusP, outputTA, outputDivPre;
 // store last generated outputs so download functions do not re-process
 let lastGridText = "";
 let lastInstructionsGrouped = ""; // string (already sorted/grouped)
+let myFont;
+function preload() {
+  // Load a custom font before the sketch starts
+  myFont = loadFont("cs.ttf");
+}
 
 // --------- p5 setup ----------
 function setup() {
   pixelDensity(1);
+  textFont(myFont);
   let cnv = createCanvas(canvasSize, canvasSize);
   cnv.parent(document.body);
 
@@ -89,7 +110,7 @@ function draw() {
       let bright = Math.floor((r + g + b) / 3);
       let hanidx = Math.floor(map(bright, 0, 255, 0, hanzi.length - 1));
       let ch = hanzi[hanidx];
-      text(ch, i * vScale, j * vScale);
+      text(ch, i * vScale, (j + 1) * vScale);
     }
   }
   pop();
@@ -188,7 +209,7 @@ function showImage() {
 
       out += ch;
 
-      if (ch !== "。") {
+      if (ch !== "一") {
         // ROW = letter, COLUMN = number
         const rowLetter = colToLetters(j); // row letter
         const colNumber = i + 1; // column number

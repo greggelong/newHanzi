@@ -34,14 +34,20 @@
 
       #output pre,
       textarea {
-        font-family: "Source Han Mono", "Noto Sans Mono CJK",
-          "Microsoft YaHei Mono", monospace;
+        font-family: "cstensil", monospace;
         font-size: 12px;
         line-height: 1.2;
         white-space: pre;
         background: linen;
         color: black;
         overflow: auto;
+      }
+
+      @font-face {
+        font-family: "cstensil"; /* Choose a name for your font */
+        src: url("cs.ttf") format("truetype"); /* Adjust path and format */
+        font-weight: normal;
+        font-style: normal;
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
