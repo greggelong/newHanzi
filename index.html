@@ -45,7 +45,7 @@
       }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-    <script src="sketch.js" defer></script>
+    <script src="sketch1.js" defer></script>
   </head>
   <body>
     <h2>Hanzi Image Converter</h2>
@@ -60,12 +60,15 @@
     <button id="convertBtn">Convert</button>
     <button id="saveBtn">Save Canvas</button>
     <button id="downloadTxtBtn">Download Text</button>
+    <button id="downloadInstrBtn">Download Instructions</button>
+
     <p id="status">Loading…</p>
 
-    <!-- This textarea is used for raw text & downloads -->
-    <textarea id="outputTA"></textarea>
+    <div id="status">Ready.</div>
 
-    <!-- This div shows formatted output -->
-    <div id="output"></div>
+    <textarea id="outputTA" readonly></textarea>
+
+    <!-- This is the PRE block your code is expecting -->
+    <div id="output"><pre></pre></div>
   </body>
 </html>
